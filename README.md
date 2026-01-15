@@ -1,13 +1,12 @@
 # SHMU Sports Games 2026 Website
 
-A simple, modern website for the XXXII. Sports Games between SHMU (Slovak Hydrometeorological Institute) and ČHMÚ (Czech Hydrometeorological Institute).
+A simple website for the XXXII. Sports Games between SHMU (Slovak Hydrometeorological Institute) and ČHMÚ (Czech Hydrometeorological Institute).
 
 ## Features
 
 - **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices
 - **Simple Navigation**: Easy-to-use menu with 6 main sections
 - **No Login Required**: Pure informational website
-- **Modern UI**: Clean, professional design with smooth animations
 - **Easy to Update**: Simple HTML structure, easy to modify content
 
 ## Structure
