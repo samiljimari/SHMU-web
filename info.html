@@ -134,23 +134,53 @@
                     <h2><i class="fas fa-clipboard-list"></i> Registrácia</h2>
                     <div class="registration-info">
                         <p><strong>Termín:</strong> [Vložiť dátum]</p>
-                        <p><strong>Kontakt:</strong> [Emailová adresa]</p>
-                        <p><strong>Telefón:</strong> [Telefónne číslo]</p>
+                        <p><strong>Kontakt:</strong> [Emailová adresa bude doplnená]</p>
                         
-                        <h4>Čo si priniesť:</h4>
-                        <ul>
-                            <li>Športové oblečenie a obuv</li>
-                            <li>Osobné športové vybavenie (voliteľné)</li>
-                            <li>Pohodlné voľnočasové oblečenie na spoločenské akcie</li>
-                            <li>Osobný preukaz/pas</li>
-                        </ul>
+                        <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Registračný formulár</h3>
+                        <form class="registration-form" id="registrationForm">
+                            <div class="form-group">
+                                <label for="teamName">Názov tímu *</label>
+                                <input type="text" id="teamName" name="teamName" required placeholder="Napr. Ostrava 1, Praha 2, Bratislava...">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="teamMembers">Zoznam členov tímu *</label>
+                                <textarea id="teamMembers" name="teamMembers" rows="10" required placeholder="Zadajte mená všetkých členov tímu (každý na novom riadku)&#10;Napr:&#10;Ján Novák&#10;Peter Kováč&#10;Mária Horváthová&#10;..."></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contactPerson">Kontaktná osoba *</label>
+                                <input type="text" id="contactPerson" name="contactPerson" required placeholder="Meno a priezvisko">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contactEmail">Email kontaktnej osoby *</label>
+                                <input type="email" id="contactEmail" name="contactEmail" required placeholder="priklad@email.sk">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contactPhone">Telefónne číslo kontaktnej osoby</label>
+                                <input type="tel" id="contactPhone" name="contactPhone" placeholder="+421 XXX XXX XXX">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="notes">Poznámky (voliteľné)</label>
+                                <textarea id="notes" name="notes" rows="4" placeholder="Dietetické požiadavky, špeciálne potreby, ďalšie informácie..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-submit">
+                                <i class="fas fa-paper-plane"></i> Odoslať registráciu
+                            </button>
+                        </form>
+                        
+                        <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #6b7280;"><em>* Povinné polia</em></p>
                     </div>
                 </div>
 
                 <div class="info-section contact-box">
                     <h2><i class="fas fa-phone"></i> Kontakt</h2>
                     <p>Pre akékoľvek otázky prosím kontaktujte organizačný výbor:</p>
-                    <p><strong>Email:</strong> <a href="mailto:sportgames@shmu.sk">sportgames@shmu.sk</a><br>
+                    <p><strong>Email:</strong> <a href="mailto:placeholder@shmu.sk">placeholder@shmu.sk</a><br>
                     <strong>Telefón:</strong> [Telefónne číslo]<br>
                     <strong>Koordinátor podujatia:</strong> [Meno]</p>
                 </div>
@@ -171,5 +201,37 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script>
+        // Handle registration form submission
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                teamName: document.getElementById('teamName').value,
+                teamMembers: document.getElementById('teamMembers').value,
+                contactPerson: document.getElementById('contactPerson').value,
+                contactEmail: document.getElementById('contactEmail').value,
+                contactPhone: document.getElementById('contactPhone').value,
+                notes: document.getElementById('notes').value
+            };
+            
+            // Create mailto link with form data
+            const subject = encodeURIComponent('Registrácia tímu: ' + formData.teamName);
+            const body = encodeURIComponent(
+                'Názov tímu: ' + formData.teamName + '\n\n' +
+                'Členovia tímu:\n' + formData.teamMembers + '\n\n' +
+                'Kontaktná osoba: ' + formData.contactPerson + '\n' +
+                'Email: ' + formData.contactEmail + '\n' +
+                'Telefón: ' + formData.contactPhone + '\n\n' +
+                'Poznámky:\n' + formData.notes
+            );
+            
+            // Note: Email address will be specified later
+            const mailtoLink = 'mailto:[EMAIL_BUDE_DOPLNENY]?subject=' + subject + '&body=' + body;
+            
+            alert('Formulár bude odoslaný emailom. Prosím, dokončite odoslanie v aplikácii Vášho emailového klienta.');
+            window.location.href = mailtoLink;
+        });
+    </script>
 </body>
 </html>
