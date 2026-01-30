@@ -23,6 +23,7 @@
                     <li><a href="gallery.html">Galéria</a></li>
                     <li><a href="history.html">História</a></li>
                 </ul>
+                <button class="admin-btn" id="adminBtn"><i class="fas fa-lock"></i> Admin</button>
                 <div class="hamburger">
                     <span></span>
                     <span></span>
@@ -55,7 +56,7 @@
                                 <th>Celkové body</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="overallStandingsBody">
                             <tr>
                                 <td colspan="6" style="text-align: center; padding: 2rem; color: var(--text-light);">
                                     <i class="fas fa-users" style="font-size: 2rem; margin-bottom: 1rem; display: block;"></i>
@@ -68,75 +69,65 @@
                     <p class="results-note"><em>Celkové poradie bude zverejnené po ukončení všetkých súťaží</em></p>
                 </div>
 
-                <div class="sport-results">
+                <div class="sport-results" id="futbal-section">
                     <h2><i class="fas fa-futbol"></i> Futbal</h2>
                     <div class="result-box">
-                        <h3>Turnajové výsledky</h3>
+                        <h3>Tabuľka</h3>
                         <table class="results-table">
                             <thead>
                                 <tr>
-                                    <th>Umiestnenie</th>
+                                    <th>#</th>
                                     <th>Tím</th>
-                                    <th>Organizácia</th>
+                                    <th>Z</th>
+                                    <th>V</th>
+                                    <th>R</th>
+                                    <th>P</th>
+                                    <th>Skóre</th>
+                                    <th>+/-</th>
+                                    <th>Body</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="futbal-results">
                                 <tr>
-                                    <td><i class="fas fa-medal" style="color: #FFD700;"></i> 1. miesto</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td><i class="fas fa-medal" style="color: #C0C0C0;"></i> 2. miesto</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td><i class="fas fa-medal" style="color: #CD7F32;"></i> 3. miesto</td>
-                                    <td>-</td>
-                                    <td>-</td>
+                                    <td colspan="9" style="text-align: center; padding: 1.5rem; color: var(--text-light);">
+                                        <em>Výsledky sa očakávajú</em>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
-                        <p class="status">Výsledky sa očakávajú</p>
                     </div>
                 </div>
 
-                <div class="sport-results">
+                <div class="sport-results" id="volejbal-section">
                     <h2><i class="fas fa-volleyball-ball"></i> Volejbal</h2>
                     <div class="result-box">
-                        <h3>Turnajové výsledky</h3>
+                        <h3>Tabuľka</h3>
                         <table class="results-table">
                             <thead>
                                 <tr>
-                                    <th>Umiestnenie</th>
+                                    <th>#</th>
                                     <th>Tím</th>
-                                    <th>Organizácia</th>
+                                    <th>Z</th>
+                                    <th>V</th>
+                                    <th>R</th>
+                                    <th>P</th>
+                                    <th>Skóre</th>
+                                    <th>+/-</th>
+                                    <th>Body</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="volejbal-results">
                                 <tr>
-                                    <td><i class="fas fa-medal" style="color: #FFD700;"></i> 1. miesto</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td><i class="fas fa-medal" style="color: #C0C0C0;"></i> 2. miesto</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td><i class="fas fa-medal" style="color: #CD7F32;"></i> 3. miesto</td>
-                                    <td>-</td>
-                                    <td>-</td>
+                                    <td colspan="9" style="text-align: center; padding: 1.5rem; color: var(--text-light);">
+                                        <em>Výsledky sa očakávajú</em>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
-                        <p class="status">Výsledky sa očakávajú</p>
                     </div>
                 </div>
 
-                <div class="sport-results">
+                <div class="sport-results" id="stolny-tenis-section">
                     <h2><i class="fas fa-table-tennis"></i> Stolný tenis</h2>
                     <div class="result-box">
                         <h3>Turnajové výsledky</h3>
@@ -146,31 +137,21 @@
                                     <th>Umiestnenie</th>
                                     <th>Hráč/Tím</th>
                                     <th>Organizácia</th>
+                                    <th>Skóre</th>
                                 </tr>
-                            </thead>
-                            <tbody>
+                            </thead>    
+                            <tbody id="stolny-tenis-results">
                                 <tr>
-                                    <td><i class="fas fa-medal" style="color: #FFD700;"></i> 1. miesto</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td><i class="fas fa-medal" style="color: #C0C0C0;"></i> 2. miesto</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td><i class="fas fa-medal" style="color: #CD7F32;"></i> 3. miesto</td>
-                                    <td>-</td>
-                                    <td>-</td>
+                                    <td colspan="4" style="text-align: center; padding: 1.5rem; color: var(--text-light);">
+                                        <em>Výsledky sa očakávajú</em>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
-                        <p class="status">Výsledky sa očakávajú</p>
                     </div>
                 </div>
 
-                <div class="sport-results">
+                <div class="sport-results" id="bedminton-section">
                     <h2><i class="fas fa-baseball-ball"></i> Bedminton</h2>
                     <div class="result-box">
                         <h3>Turnajové výsledky - Dvojhra a štvorhra</h3>
@@ -180,31 +161,21 @@
                                     <th>Umiestnenie</th>
                                     <th>Hráč/Tím</th>
                                     <th>Organizácia</th>
+                                    <th>Skóre</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="bedminton-results">
                                 <tr>
-                                    <td><i class="fas fa-medal" style="color: #FFD700;"></i> 1. miesto</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td><i class="fas fa-medal" style="color: #C0C0C0;"></i> 2. miesto</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td><i class="fas fa-medal" style="color: #CD7F32;"></i> 3. miesto</td>
-                                    <td>-</td>
-                                    <td>-</td>
+                                    <td colspan="4" style="text-align: center; padding: 1.5rem; color: var(--text-light);">
+                                        <em>Výsledky sa očakávajú</em>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
-                        <p class="status">Výsledky sa očakávajú</p>
                     </div>
                 </div>
 
-                <div class="sport-results">
+                <div class="sport-results" id="beh-section">
                     <h2><i class="fas fa-running"></i> Beh</h2>
                     <div class="result-box">
                         <h3>Turnajové výsledky - Dráhové disciplíny</h3>
@@ -214,27 +185,17 @@
                                     <th>Umiestnenie</th>
                                     <th>Hráč</th>
                                     <th>Organizácia</th>
+                                    <th>Čas</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="beh-results">
                                 <tr>
-                                    <td><i class="fas fa-medal" style="color: #FFD700;"></i> 1. miesto</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td><i class="fas fa-medal" style="color: #C0C0C0;"></i> 2. miesto</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td><i class="fas fa-medal" style="color: #CD7F32;"></i> 3. miesto</td>
-                                    <td>-</td>
-                                    <td>-</td>
+                                    <td colspan="4" style="text-align: center; padding: 1.5rem; color: var(--text-light);">
+                                        <em>Výsledky sa očakávajú</em>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
-                        <p class="status">Výsledky sa očakávajú</p>
                     </div>
                 </div>
             </div>
@@ -253,6 +214,157 @@
         </div>
     </footer>
 
+    <!-- Admin Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2><i class="fas fa-lock"></i> Prihlásenie administrátora</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="password">Heslo:</label>
+                    <input type="password" id="password" placeholder="Zadajte heslo" required>
+                </div>
+                <button type="submit" class="btn-primary">Prihlásiť</button>
+                <p id="loginError" class="error-msg"></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Panel Modal -->
+    <div id="adminModal" class="modal">
+        <div class="modal-content admin-panel">
+            <span class="close" id="closeAdmin">&times;</span>
+            <h2><i class="fas fa-chart-line"></i> Panel správcu výsledkov</h2>
+            
+            <div class="admin-tabs">
+                <button class="tab-btn active" data-tab="teams">Tímy</button>
+                <button class="tab-btn" data-tab="matches">Zápasy</button>
+                <button class="tab-btn" data-tab="manage">Nastavenia</button>
+            </div>
+
+            <div id="teamsTab" class="tab-content active">
+                <h3><i class="fas fa-users"></i> Registrácia tímov</h3>
+                <form id="addTeamForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="teamName">Názov tímu: *</label>
+                            <input type="text" id="teamName" placeholder="napr. SHMÚ Bratislava" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="teamOrg">Organizácia: *</label>
+                            <select id="teamOrg" required>
+                                <option value="">Vyberte...</option>
+                                <option value="SHMÚ">SHMÚ</option>
+                                <option value="ČHMÚ">ČHMÚ</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="teamMembers">Členovia tímu (oddelení čiarkami): *</label>
+                        <input type="text" id="teamMembers" placeholder="Jozef Novák, Peter Kováč, Mária Veľká" required>
+                    </div>
+                    <button type="submit" class="btn-primary"><i class="fas fa-plus"></i> Pridať tím</button>
+                </form>
+                
+                <hr style="margin: 2rem 0; border: none; border-top: 1px solid var(--border-color);">
+                
+                <h3><i class="fas fa-list"></i> Registrované tímy</h3>
+                <div id="teamsContainer"></div>
+            </div>
+            
+            <div id="matchesTab" class="tab-content">
+                <h3><i class="fas fa-clipboard-list"></i> Pridanie zápasu</h3>
+                <form id="matchForm">
+                    <div class="form-group">
+                        <label for="matchSport">Šport: *</label>
+                        <select id="matchSport" required>
+                            <option value="">Vyberte šport...</option>
+                            <option value="futbal">Futbal</option>
+                            <option value="volejbal">Volejbal</option>
+                            <option value="stolny-tenis">Stolný tenis</option>
+                            <option value="bedminton">Bedminton</option>
+                            <option value="beh">Beh</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="matchDate">Dátum (volitelný):</label>
+                        <input type="date" id="matchDate">
+                    </div>
+                    
+                    <!-- Team sports inputs -->
+                    <div id="teamMatchInputs" style="display: none;">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="team1Select">Tím 1: *</label>
+                                <select id="team1Select" class="team-select">
+                                    <option value="">Vyberte tím...</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="team2Select">Tím 2: *</label>
+                                <select id="team2Select" class="team-select">
+                                    <option value="">Vyberte tím...</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="score1">Skóre tímu 1: *</label>
+                                <input type="number" id="score1" min="0" placeholder="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="score2">Skóre tímu 2: *</label>
+                                <input type="number" id="score2" min="0" placeholder="0">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="matchDetails">Detaily (volitelné):</label>
+                            <input type="text" id="matchDetails" placeholder="napr. (3:1 sety) alebo (4:3 pen.)">
+                        </div>
+                    </div>
+                    
+                    <!-- Individual sports inputs -->
+                    <div id="individualInputs" style="display: none;">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="participantName">Meno účastníka: *</label>
+                                <input type="text" id="participantName" placeholder="Jozef Novák">
+                            </div>
+                            <div class="form-group">
+                                <label for="participantOrg">Organizácia: *</label>
+                                <select id="participantOrg">
+                                    <option value="">Vyberte...</option>
+                                    <option value="SHMÚ">SHMÚ</option>
+                                    <option value="ČHMÚ">ČHMÚ</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="individualResult">Výsledok: *</label>
+                            <input type="text" id="individualResult" placeholder="napr. 12.5s, 3:1 (11:7, 9:11, 11:9, 11:6)">
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary"><i class="fas fa-save"></i> Uložiť zápas</button>
+                </form>
+                
+                <hr style="margin: 2rem 0; border: none; border-top: 1px solid var(--border-color);">
+                
+                <h3><i class="fas fa-history"></i> Evidované zápasy</h3>
+                <div id="matchesContainer"></div>
+            </div>
+
+            <div id="manageTab" class="tab-content">
+                <div class="manage-section">
+                    <h3><i class="fas fa-cog"></i> Nastavenia a správa</h3>
+                    <div id="manageContainer"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="js/script.js"></script>
+    <script src="js/results-admin.js"></script>
 </body>
 </html>
