@@ -719,22 +719,34 @@ function loadManageTab() {
         
         <div class="data-management">
             <h3><i class="fas fa-database"></i> Správa dát</h3>
-            <p><i class="fas fa-check-circle" style="color: var(--success-color);"></i> Zmeny sa ukladajú automaticky</p>
-            <p>Posledná aktualizácia: ${lastUpdated ? new Date(lastUpdated).toLocaleString('sk-SK') : 'Nikdy'}</p>
+            <p><i class="fas fa-save" style="color: var(--success-color);"></i> Zmeny sa ukladajú lokálne v prehliadači</p>
+            <p>Posledná aktualizácia: ${lastUpdated ? new Date(parseInt(lastUpdated)).toLocaleString('sk-SK') : 'Nikdy'}</p>
             
             <div class="button-group">
                 <button class="btn-primary" onclick="loadFromJSON()">
-                    <i class="fas fa-sync"></i> Obnoviť z data.json
+                    <i class="fas fa-sync"></i> Načítať z data.json
                 </button>
                 <button class="btn-secondary" onclick="publishToJSON()">
-                    <i class="fas fa-download"></i> Stiahnuť zálohu
+                    <i class="fas fa-upload"></i> Publikovať zmeny
                 </button>
             </div>
             
             <div class="info-box">
-                <strong><i class="fas fa-info-circle"></i> Automatické ukladanie:</strong>
-                <p>Všetky zmeny sa automaticky ukladajú na server do súboru <code>data.json</code>. Návštevníci vidia zmeny okamžite.</p>
-                <p><strong>Poznámka:</strong> Uistite sa, že súbor <code>save-data.php</code> je nahraný na serveri a má práva na zápis do <code>data.json</code>.</p>
+                <strong><i class="fas fa-info-circle"></i> Ako zverejniť výsledky:</strong>
+                <ol style="margin: 0.5rem 0; padding-left: 1.5rem;">
+                    <li>Pridajte tímy a zápasy vyššie</li>
+                    <li>Kliknite na "Publikovať zmeny" - stiahne sa data.json</li>
+                    <li>Nahraďte starý data.json súbor v projekte</li>
+                    <li>Spustite git príkazy:
+                        <code style="display: block; margin: 0.5rem 0; padding: 0.5rem; background: #f5f5f5; border-radius: 4px;">
+                            git add data.json<br>
+                            git commit -m "Update results"<br>
+                            git push personal main
+                        </code>
+                    </li>
+                    <li>Zmeny sa objavia na GitHub Pages za 1-2 minúty</li>
+                </ol>
+                <p style="margin-top: 1rem;"><strong>💡 Tip:</strong> Pri live udalosti môžete publikovať výsledky priebežne každých 10-15 minút.</p>
             </div>
         </div>
         
@@ -790,7 +802,7 @@ function loadFromJSON() {
         });
 }
 
-// Save data to server automatically
+// Auto-save to localStorage (no server required)
 function saveToServer() {
     const data = {
         teams: getTeams(),
@@ -798,26 +810,11 @@ function saveToServer() {
         lastUpdated: Date.now()
     };
     
-    fetch('save-data.php', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data)
-    })
-    .then(response => response.json())
-    .then(result => {
-        if (result.success) {
-            localStorage.setItem('lastUpdated', result.timestamp);
-            console.log('Data automatically saved to server');
-        } else {
-            console.error('Save failed:', result.error);
-        }
-    })
-    .catch(error => {
-        console.error('Error saving to server:', error);
-        // Silently fail - data is still in localStorage
-    });
+    localStorage.setItem('lastUpdated', data.lastUpdated);
+    console.log('Data saved to localStorage');
+    
+    // Show save indicator
+    showSaveIndicator();
 }
 
 // Manual publish function (backup/download)
@@ -840,7 +837,32 @@ function publishToJSON() {
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
     
-    alert('Záložný súbor data.json bol stiahnutý!');
+    alert('✅ Súbor data.json bol stiahnutý!\n\nPre zverejnenie zmien:\n1. Nahraďte starý data.json v projekte\n2. Spustite: git add data.json\n3. Spustite: git commit -m "Update results"\n4. Spustite: git push personal main\n\nZmeny sa objavia na stránke za 1-2 minúty.');
+}
+
+// Save indicator
+function showSaveIndicator() {
+    const indicator = document.createElement('div');
+    indicator.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: var(--success-color);
+        color: white;
+        padding: 1rem 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        z-index: 10000;
+        animation: slideIn 0.3s ease;
+    `;
+    indicator.innerHTML = '<i class="fas fa-check-circle"></i> Uložené';
+    document.body.appendChild(indicator);
+    
+    setTimeout(() => {
+        indicator.style.opacity = '0';
+        indicator.style.transition = 'opacity 0.3s';
+        setTimeout(() => indicator.remove(), 300);
+    }, 2000);
 }
 
 // Logout functionality
