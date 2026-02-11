@@ -119,9 +119,9 @@
                 <div class="info-section">
                     <h2><i class="fas fa-utensils"></i> Stravovanie</h2>
                     <div class="meals-info">
-                        <p>info o poskytnutom jedalnom rezime sem</p>
+                        <p>Stravovanie je zabezpečené a hradené organizátorom. Presný denný jedálny lístok bude poskytnutý v neskoršom termíne.</p>
                         
-                        <p><em>Prosím, informujte nás o prípadných dietetických obmedzeniach pri registrácii.</em></p>
+                        <p><em>Prosím, informujte nás o prípadných alergiách pri registrácii.</em></p>
                     </div>
                 </div>
 
@@ -129,18 +129,13 @@
                     <h2><i class="fas fa-clipboard-list"></i> Registrácia</h2>
                     <div class="registration-info">
                         <p><strong>Termín:</strong> [Vložiť dátum]</p>
-                        <p><strong>Kontakt:</strong> [Emailová adresa bude doplnená]</p>
+                        <p><strong>Kontakt:</strong> akcie@shmu.sk</p>
                         
                         <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Registračný formulár</h3>
                         <form class="registration-form" id="registrationForm">
                             <div class="form-group">
                                 <label for="teamName">Názov tímu *</label>
                                 <input type="text" id="teamName" name="teamName" required placeholder="Napr. Ostrava 1, Praha 2, Bratislava...">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="teamMembers">Zoznam členov tímu *</label>
-                                <textarea id="teamMembers" name="teamMembers" rows="10" required placeholder="Zadajte mená všetkých členov tímu (každý na novom riadku)&#10;Napr:&#10;Ján Novák&#10;Peter Kováč&#10;Mária Horváthová&#10;..."></textarea>
                             </div>
                             
                             <div class="form-group">
@@ -157,10 +152,29 @@
                                 <label for="contactPhone">Telefónne číslo kontaktnej osoby</label>
                                 <input type="tel" id="contactPhone" name="contactPhone" placeholder="+421 XXX XXX XXX">
                             </div>
+
+                            <div class="form-group">
+                                <label>Počet členov tímu *</label>
+                                <input type="number" id="teamSize" name="teamSize" required min="2" max="7" value="2" placeholder="2-7 členov">
+                                <small style="color: #6b7280;">Min. 2, Max. 7 členov</small>
+                            </div>
+
+                            <div id="teamMembersContainer">
+                                <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Údaje členov tímu</h3>
+                                <!-- Dynamic team member fields will be inserted here -->
+                            </div>
                             
                             <div class="form-group">
                                 <label for="notes">Poznámky (voliteľné)</label>
-                                <textarea id="notes" name="notes" rows="4" placeholder="Dietetické požiadavky, špeciálne potreby, ďalšie informácie..."></textarea>
+                                <textarea id="notes" name="notes" rows="4" placeholder="Ďalšie informácie..."></textarea>
+                            </div>
+
+                            <div class="form-group" style="display: flex; align-items: start; gap: 0.5rem;">
+                                <input type="checkbox" id="gdprConsent" name="gdprConsent" required style="width: auto; margin-top: 0.25rem;">
+                                <label for="gdprConsent" style="margin: 0; font-weight: 400;">
+                                    Súhlasím so spracovaním osobných údajov v súlade s 
+                                    <a href="gdpr.html" target="_blank" style="color: var(--primary-color); text-decoration: underline;">GDPR</a> *
+                                </label>
                             </div>
                             
                             <button type="submit" class="btn btn-submit">
@@ -175,7 +189,7 @@
                 <div class="info-section contact-box">
                     <h2><i class="fas fa-phone"></i> Kontakt</h2>
                     <p>Pre akékoľvek otázky prosím kontaktujte organizačný výbor:</p>
-                    <p><strong>Email:</strong> <a href="mailto:placeholder@shmu.sk">placeholder@shmu.sk</a><br>
+                    <p><strong>Email:</strong> <a href="mailto:akcie@shmu.sk">akcie@shmu.sk</a><br>
                     <strong>Telefón:</strong> [Telefónne číslo]<br>
                     <strong>Koordinátor podujatia:</strong> [Meno]</p>
                 </div>
