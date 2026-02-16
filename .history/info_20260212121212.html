@@ -19,7 +19,7 @@
                     <li><a href="index.html">Úvod</a></li>
                     <li><a href="sports.html">Športy</a></li>
                     <li><a href="info.html" class="active">Informácie</a></li>
-                    <li><a href="results.php">Výsledky</a></li>
+                    <li><a href="results.html">Výsledky</a></li>
                     <li><a href="gallery.html">Galéria</a></li>
                     <li><a href="history.html">História</a></li>
                 </ul>
@@ -134,7 +134,7 @@
                         <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Registračný formulár</h3>
                         <form class="registration-form" id="registrationForm">
                             <div class="form-group">
-                                <label for="teamName">Názov tímu - podla minulych rocnikov *</label>
+                                <label for="teamName">Názov tímu - podla minulych rocnikov</label>
                                 <input type="text" id="teamName" name="teamName" required placeholder="Napr. Ostrava 1, Praha 2, Bratislava...">
                             </div>
                             
@@ -155,8 +155,8 @@
 
                             <div class="form-group">
                                 <label>Počet členov tímu *</label>
-                                <input type="number" id="teamSize" name="teamSize" required min="10" max="15" value="10" placeholder="10-15 členov">
-                                <small style="color: #6b7280;">Min. 10, Max. 15 členov</small>
+                                <input type="number" id="teamSize" name="teamSize" required min="2" max="7" value="2" placeholder="2-7 členov">
+                                <small style="color: #6b7280;">Min. 2, Max. 7 členov</small>
                             </div>
 
                             <div id="teamMembersContainer">
@@ -247,7 +247,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="memberAllergies${i}">Alergie (na jedlo)</label>
+                        <label for="memberAllergies${i}">Alergie (voliteľné)</label>
                         <input type="text" id="memberAllergies${i}" name="memberAllergies${i}" placeholder="Napr: arašidy, laktóza, lepok...">
                     </div>
                 `;
@@ -256,13 +256,13 @@
             }
         }
         
-        // Initialize with 10 members
-        generateTeamMemberFields(10);
+        // Initialize with 2 members
+        generateTeamMemberFields(2);
         
         // Update fields when team size changes
         document.getElementById('teamSize').addEventListener('change', function(e) {
             const count = parseInt(e.target.value);
-            if (count >= 5 && count <= 15) {
+            if (count >= 2 && count <= 7) {
                 generateTeamMemberFields(count);
             }
         });
@@ -347,8 +347,8 @@
                     alert('✓ ' + data.message + '\n\nEmail bol odoslaný na akcie@shmu.sk');
                     // Reset form
                     document.getElementById('registrationForm').reset();
-                    generateTeamMemberFields(5);
-                    document.getElementById('teamSize').value = 5;
+                    generateTeamMemberFields(2);
+                    document.getElementById('teamSize').value = 2;
                 } else {
                     alert('✗ ' + data.message);
                 }

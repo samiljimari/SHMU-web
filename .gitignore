@@ -1,2 +1,17 @@
-.history/
+# PHP files - excluded for GitHub Pages deployment
+*.php
+config.php
+db_config.php
+
+# Admin directory (contains backend code and database)
+admin/
+
+# JSON data files (if they contain sensitive data)
+registrations.json
+data.json
+
+# Database files
+*.sql
+
+# Local development files
 bash.txt
