@@ -216,6 +216,21 @@
                         </table>
                         </div>
                     </div>
+                    
+                    <div style="margin-top: 3rem; padding: 1.5rem; background-color: var(--bg-light); border-radius: 8px; border-left: 4px solid var(--primary-color);">
+                        <h3 style="color: var(--primary-color); margin-bottom: 1rem;">
+                            <i class="fas fa-map-marked-alt"></i> Mapa športovísk a zariadení
+                        </h3>
+                        <p style="margin-bottom: 1rem; color: var(--text-light);">
+                            Čísla v <span class="location-num" style="display: inline-block;">X</span> v programe zodpovedajú číslam na mape:
+                        </p>
+                        <div style="text-align: center;">
+                            <img src="gallery_prev/mapka_sporty.png" alt="Mapa športovísk a zariadení" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); cursor: pointer;" class="venue-map">
+                        </div>
+                        <p style="margin-top: 0.5rem; text-align: center; font-size: 0.85rem; color: var(--text-light); font-style: italic;">
+                            Kliknite na mapu pre zväčšenie
+                        </p>
+                    </div>
                 </div>
 
                 <div class="info-section">
@@ -289,6 +304,14 @@
                     <div class="registration-info">
                         <p><strong>Termín:</strong> [Vložiť dátum]</p>
                         <p><strong>Kontakt:</strong> akcie@shmu.sk</p>
+                        
+                        <!-- DEBUG ONLY - REMOVE BEFORE PRODUCTION -->
+                        <div style="background: #fef3c7; border: 2px solid #f59e0b; padding: 1rem; margin: 1rem 0; border-radius: 8px;">
+                            <button type="button" id="debugFillForm" style="background: #f59e0b; color: white; border: none; padding: 0.5rem 1rem; border-radius: 5px; cursor: pointer; font-weight: 600;">
+                                Fill Form with Random Data
+                            </button>
+                        </div>
+                        <!-- END DEBUG -->
                         
                         <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Registračný formulár</h3>
                         <form class="registration-form" id="registrationForm">
@@ -471,6 +494,78 @@
                 generateTeamMemberFields(count);
             }
         });
+        
+        // DEBUG ONLY - REMOVE BEFORE PRODUCTION
+        document.getElementById('debugFillForm').addEventListener('click', function() {
+            const cities = ['Bratislava', 'Praha 1', 'Praha 2', 'Ostrava 1', 'Ostrava 2', 'Brno', 'Košice', 'Žilina'];
+            const firstNames = ['Ján', 'Peter', 'Mária', 'Anna', 'Milan', 'Eva', 'Tomáš', 'Katarína', 'Martin', 'Zuzana', 'Michal', 'Lucia', 'Jakub', 'Petra', 'Marek'];
+            const lastNames = ['Novák', 'Horváth', 'Kovács', 'Tóth', 'Nagy', 'Varga', 'Molnár', 'Szabó', 'Dvořák', 'Černý', 'Procházka', 'Kučera', 'Veselý'];
+            const tshirtSizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL'];
+            const allergiesList = ['Žiadne', 'Laktóza', 'Lepok', 'Orechy', 'Vajcia', 'Žiadne alergie'];
+            
+            // Generate random date of birth between 1970 and 2000
+            function randomDate() {
+                const year = 1970 + Math.floor(Math.random() * 30);
+                const month = String(1 + Math.floor(Math.random() * 12)).padStart(2, '0');
+                const day = String(1 + Math.floor(Math.random() * 28)).padStart(2, '0');
+                return `${year}-${month}-${day}`;
+            }
+            
+            const randomCity = cities[Math.floor(Math.random() * cities.length)];
+            const randomName = firstNames[Math.floor(Math.random() * firstNames.length)] + ' ' + lastNames[Math.floor(Math.random() * lastNames.length)];
+            
+            // Fill basic fields
+            document.getElementById('teamName').value = randomCity;
+            document.getElementById('contactPerson').value = randomName;
+            document.getElementById('contactEmail').value = 'test' + Math.floor(Math.random() * 1000) + '@example.com';
+            document.getElementById('contactPhone').value = '+421 9' + Math.floor(Math.random() * 90000000 + 10000000);
+            document.getElementById('notes').value = 'Toto je testovacia registrácia.';
+            
+            // Set team size to 10
+            const teamSizeInput = document.getElementById('teamSize');
+            teamSizeInput.value = 10;
+            teamSizeInput.dispatchEvent(new Event('change'));
+            
+            // Wait a bit for fields to generate, then fill them
+            setTimeout(function() {
+                for (let i = 1; i <= 10; i++) {
+                    const firstName = firstNames[Math.floor(Math.random() * firstNames.length)];
+                    const lastName = lastNames[Math.floor(Math.random() * lastNames.length)];
+                    
+                    // Fill name
+                    const nameField = document.querySelector(`input[name="memberName${i}"]`);
+                    if (nameField) {
+                        nameField.value = firstName + ' ' + lastName;
+                    }
+                    
+                    // Fill date of birth
+                    const dobField = document.querySelector(`input[name="memberDob${i}"]`);
+                    if (dobField) {
+                        dobField.value = randomDate();
+                    }
+                    
+                    // Fill t-shirt size
+                    const tshirtSelect = document.querySelector(`select[name="memberTshirt${i}"]`);
+                    if (tshirtSelect) {
+                        const randomSize = tshirtSizes[Math.floor(Math.random() * tshirtSizes.length)];
+                        tshirtSelect.value = randomSize;
+                    }
+                    
+                    // Fill allergies
+                    const allergyField = document.querySelector(`input[name="memberAllergies${i}"]`);
+                    if (allergyField) {
+                        const randomAllergy = allergiesList[Math.floor(Math.random() * allergiesList.length)];
+                        allergyField.value = randomAllergy;
+                    }
+                }
+                
+                // Check GDPR
+                document.getElementById('gdprConsent').checked = true;
+                
+                alert('✓ Formulár bol vyplnený testovacími údajmi!');
+            }, 100);
+        });
+        // END DEBUG
         
         // Handle registration form submission
         document.getElementById('registrationForm').addEventListener('submit', function(e) {
