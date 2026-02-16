@@ -448,6 +448,41 @@ body {
     border-left: 4px solid var(--primary-color);
 }
 
+/* Collapsible schedule headers */
+.collapsible-header {
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.collapsible-header:hover {
+    background-color: #e0e7ff;
+}
+
+.collapsible-header i {
+    transition: transform 0.3s ease;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+}
+
+.collapsible-header.active i {
+    transform: rotate(180deg);
+}
+
+.collapsible-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+}
+
+.collapsible-content.active {
+    max-height: 3000px;
+    transition: max-height 0.6s ease-in;
+}
+
 .schedule-table table {
     width: 100%;
     border-collapse: collapse;
@@ -466,6 +501,33 @@ body {
     font-weight: 600;
     color: var(--primary-color);
     width: 150px;
+}
+
+/* Location number circles */
+.location-num {
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-left: 0.35rem;
+    text-align: center;
+    vertical-align: middle;
+    box-shadow: 0 2px 4px rgba(37, 99, 235, 0.3);
+}
+
+.schedule-table .event-line {
+    margin: 0.25rem 0;
+    line-height: 1.8;
+}
+
+.schedule-table ul {
+    list-style: none;
+    padding-left: 0;
 }
 
 .venue-info,
@@ -794,6 +856,87 @@ body {
 
 .upload-info a:hover {
     text-decoration: underline;
+}
+
+/* Photo items and lightbox */
+.photo-item {
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+}
+
+.photo-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+.photo-item:hover img {
+    transform: scale(1.05);
+}
+
+.lightbox {
+    display: flex;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    animation: zoomIn 0.3s;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.8); }
+    to { transform: scale(1); }
+}
+
+.lightbox-content img {
+    width: 100%;
+    height: auto;
+    max-height: 90vh;
+    object-fit: contain;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    background: none;
+    border: none;
+    padding: 0;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+}
+
+.lightbox-close:hover {
+    color: var(--primary-color);
+    transform: rotate(90deg);
 }
 
 /* History Page */

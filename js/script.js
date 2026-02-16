@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', revealOnScroll);
 
 // Gallery lightbox functionality (for when photos are added)
 function initGallery() {
-    const photos = document.querySelectorAll('.photo-grid img');
+    const photos = document.querySelectorAll('.photo-item img, .photo-grid img');
     
     photos.forEach(photo => {
         photo.addEventListener('click', function() {
@@ -85,13 +85,27 @@ function initGallery() {
             `;
             document.body.appendChild(lightbox);
             
+            // Prevent body scroll when lightbox is open
+            document.body.style.overflow = 'hidden';
+            
             lightbox.querySelector('.lightbox-close').addEventListener('click', function() {
+                document.body.style.overflow = '';
                 lightbox.remove();
             });
             
             lightbox.addEventListener('click', function(e) {
                 if (e.target === lightbox) {
+                    document.body.style.overflow = '';
                     lightbox.remove();
+                }
+            });
+            
+            // Close on Escape key
+            document.addEventListener('keydown', function closeOnEscape(e) {
+                if (e.key === 'Escape') {
+                    document.body.style.overflow = '';
+                    lightbox.remove();
+                    document.removeEventListener('keydown', closeOnEscape);
                 }
             });
         });
