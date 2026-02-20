@@ -42,7 +42,7 @@
         <section class="sports-list">
             <div class="container">
                 <div class="sports-grid">
-                    <div class="sport-card">
+                    <div class="sport-card" onclick="openSportModal('futbal')">
                         <div class="sport-icon"><i class="fas fa-futbol"></i></div>
                         <h3>Futbal</h3>
                         <p>Turnaj vo vonkajšom futbale</p>
@@ -51,9 +51,10 @@
                             <li><strong>Trvanie:</strong> 2x7 minút</li>
                             <li><strong>Miesto:</strong> Ihrisko s umelou trávou</li>
                         </ul>
+                        <span class="sport-card-more"><i class="fas fa-info-circle"></i> Viac informácií</span>
                     </div>
 
-                    <div class="sport-card">
+                    <div class="sport-card" onclick="openSportModal('volejbal')">
                         <div class="sport-icon"><i class="fas fa-volleyball-ball"></i></div>
                         <h3>Volejbal</h3>
                         <p>Halová volejbalová súťaž</p>
@@ -62,9 +63,10 @@
                             <li><strong>Bodovanie:</strong> Prvý do 15 bodov (finále do 25)</li>
                             <li><strong>Miesto:</strong> Športová hala</li>
                         </ul>
+                        <span class="sport-card-more"><i class="fas fa-info-circle"></i> Viac informácií</span>
                     </div>
 
-                    <div class="sport-card">
+                    <div class="sport-card" onclick="openSportModal('stolnyTenis')">
                         <div class="sport-icon"><i class="fas fa-table-tennis"></i></div>
                         <h3>Stolný tenis</h3>
                         <p>Rýchla halová súťaž</p>
@@ -73,9 +75,10 @@
                             <li><strong>Sety:</strong> Do 2 setov</li>
                             <li><strong>Miesto:</strong> Športová hala</li>
                         </ul>
+                        <span class="sport-card-more"><i class="fas fa-info-circle"></i> Viac informácií</span>
                     </div>
 
-                    <div class="sport-card">
+                    <div class="sport-card" onclick="openSportModal('basketbal')">
                         <div class="sport-icon"><i class="fas fa-basketball-ball"></i></div>
                         <h3>Basketbal - hod na kôš</h3>
                         <p>Rýchly streetball turnaj</p>
@@ -84,9 +87,10 @@
                             <li><strong>Trvanie:</strong> 10 hodov zo vzdialenosti 5 metrov</li>
                             <li><strong>Miesto:</strong> Betonove ihrisko</li>
                         </ul>
+                        <span class="sport-card-more"><i class="fas fa-info-circle"></i> Viac informácií</span>
                     </div>
 
-                    <div class="sport-card">
+                    <div class="sport-card" onclick="openSportModal('miniGolf')">
                         <div class="sport-icon"><i class="fas fa-golf-ball"></i></div>
                         <h3>Mini golf</h3>
                         <p>Zábavná golfová súťaž</p>
@@ -95,9 +99,10 @@
                             <li><strong>Formát:</strong> Individuálna súťaž</li>
                             <li><strong>Miesto:</strong> Mini golf areál</li>
                         </ul>
+                        <span class="sport-card-more"><i class="fas fa-info-circle"></i> Viac informácií</span>
                     </div>
 
-                    <div class="sport-card">
+                    <div class="sport-card" onclick="openSportModal('bowling')">
                         <div class="sport-icon"><i class="fas fa-bowling-ball"></i></div>
                         <h3>Bowling</h3>
                         <p>Klasický bowling turnaj</p>
@@ -106,9 +111,10 @@
                             <li><strong>Kolá:</strong> 10 kôl</li>
                             <li><strong>Miesto:</strong> Bowling centrum</li>
                         </ul>
+                        <span class="sport-card-more"><i class="fas fa-info-circle"></i> Viac informácií</span>
                     </div>
 
-                    <div class="sport-card">
+                    <div class="sport-card" onclick="openSportModal('beh')">
                         <div class="sport-icon"><i class="fas fa-running"></i></div>
                         <h3>Beh</h3>
                         <p>Dráhové disciplíny</p>
@@ -118,9 +124,10 @@
                             <li><strong>Formát:</strong> Individuálna súťaž</li>
                             <li><strong>Miesto:</strong> Beh v prírode</li>
                         </ul>
+                        <span class="sport-card-more"><i class="fas fa-info-circle"></i> Viac informácií</span>
                     </div>
 
-                    <div class="sport-card">
+                    <div class="sport-card" onclick="openSportModal('aquaCross')">
                         <div class="sport-icon"><i class="fas fa-water"></i></div>
                         <h3>Aqua Cross</h3>
                         <p>Vodná prekážková súťaž</p>
@@ -129,9 +136,10 @@
                             <li><strong>Formát:</strong> Tímová súťaž</li>
                             <li><strong>Miesto:</strong> Vodný areál</li>
                         </ul>
+                        <span class="sport-card-more"><i class="fas fa-info-circle"></i> Viac informácií</span>
                     </div>
 
-                    <div class="sport-card">
+                    <div class="sport-card" onclick="openSportModal('kviz')">
                         <div class="sport-icon"><i class="fas fa-brain"></i></div>
                         <h3>Poraď sa s koňom</h3>
                         <p>Súťaž vedomostí a logiky</p>
@@ -140,9 +148,10 @@
                             <li><strong>Hodnotenie:</strong> Čas + body</li>
                             <li><strong>Poznámka:</strong> Detaily budú oznámené</li>
                         </ul>
+                        <span class="sport-card-more"><i class="fas fa-info-circle"></i> Viac informácií</span>
                     </div>
 
-                    <div class="sport-card" style="opacity: 0.7; border: 2px dashed var(--border-color);">
+                    <div class="sport-card" style="opacity: 0.7; border: 2px dashed var(--border-color);" onclick="openSportModal('plazovyTenis')">
                         <div class="sport-icon"><i class="fas fa-baseball-ball"></i></div>
                         <h3>Plážový tenis</h3>
                         <p>Potenciálna disciplína</p>
@@ -151,6 +160,7 @@
                             <li><strong>Bodovanie:</strong> Prvý do 15 bodov</li>
                             <li><strong>Status:</strong> <em>Závisí od počasia a záujmu</em></li>
                         </ul>
+                        <span class="sport-card-more"><i class="fas fa-info-circle"></i> Viac informácií</span>
                     </div>
 
                     <div class="sport-card" style="opacity: 0.7; border: 2px dashed var(--border-color);">
@@ -201,5 +211,436 @@
     </footer>
 
     <script src="js/script.js"></script>
+
+    <!-- Sport Detail Modals -->
+    <div id="sportModal" class="sport-modal-overlay" onclick="closeSportModal(event)">
+        <div class="sport-modal-box">
+            <button class="sport-modal-close" onclick="closeSportModalBtn()">&times;</button>
+            <div id="sportModalContent"></div>
+        </div>
+    </div>
+
+    <script>
+    const sportData = {
+        futbal: {
+            icon: 'fa-futbol',
+            name: 'Futbal',
+            subtitle: 'Turnaj vo futbale',
+            categories: 'Ženy / Muži (oddelené skupiny)',
+            image: null,
+            details: [
+                { label: 'Počet hráčov', value: '5 + 0 (bez brankára)' },
+                { label: 'Miesto (muži)', value: 'Multifunkčné ihrisko č. 10' },
+                { label: 'Miesto (ženy)', value: 'Telocvičňa č. 106' },
+                { label: 'Hrací čas', value: '2 × 7 min, prestávka 2 min' },
+                { label: 'Hrací čas (finále)', value: '2 × 10 min' },
+                { label: 'Formát', value: 'Skupiny A, B – každý s každým + playoff' },
+                { label: 'Vedúci', value: 'Tomáš Borároš, Juraj Havran' },
+            ],
+            rules: [
+                'Hrá sa systémom 5+0 – brankára zastupuje hráč najbližšie k bránke.',
+                'Hra rukou je zakázaná; po úmyselnej ruke nasleduje pokutový kop z polovice ihriska.',
+                'Aut sa zahráva nohou (pri prekopnutí lopty mimo ihrisko).',
+                'V tíme mužov môžu nastúpiť max. 2 ženy.',
+                'Remíza v skupinovej fáze: penalty z polovice ihriska (3 hráči). Vo finále: predĺženie 5 min do zlatého gólu.',
+                'Bodovanie: výhra 3 body, výhra po penaltách 2, prehra po penaltách 1, prehra 0.',
+                'Poradie: body → vzájomný zápas → minitabuľka.',
+                'Zápasy o umiestnenie: 4A–4B, 3A–3B, 2A–2B, 1A–1B. Finále sobota večer na ihrisku č. 10.',
+            ],
+            notes: 'Nasadení finalisti SH 2024 – Muži: sk. A Praha, sk. B Ostrava | Ženy: sk. A Slovensko 2, sk. B Praha 2'
+        },
+        volejbal: {
+            icon: 'fa-volleyball-ball',
+            name: 'Volejbal',
+            subtitle: 'Muži: halová súťaž | Ženy: plážový volejbal',
+            categories: 'Muži – hala (č. 12) | Ženy – plážový (č. 11)',
+            image: null,
+            details: [
+                { label: 'Muži – miesto', value: 'Multifunkčné ihrisko č. 12' },
+                { label: 'Muži – počet hráčov', value: '6 (max. 2 ženy v tíme)' },
+                { label: 'Ženy – miesto', value: 'Pieskové ihrisko č. 11' },
+                { label: 'Ženy – počet hráčov', value: '3 ženy' },
+                { label: 'Formát', value: 'Skupiny A, B – každý s každým' },
+                { label: 'Vedúci', value: 'Zuzana Danáčová' },
+            ],
+            rules: [
+                'Skupiny A, B – každý s každým.',
+                'Základná fáza: 2 sety do 15 bodov (výhra o 2 body).',
+                'Výsledok 2:0 → 3 body; 1:1 → 2 body lepšiemu / 1 bod horšiemu (pri rovnosti 1 bod každému); 0:2 → 0 bodov.',
+                'Poradie podľa bodov. Zápasy o umiestnenie podľa poradia skupín.',
+                'Finále: 2 víťazné sety do 15.',
+                'Ženy hrajú rovnaké pravidlá, ale 3-členné tímy na pieskovom ihrisku č. 11 (plážový volejbal).',
+            ],
+            notes: 'Nasadení finalisti SH 2022 – Muži: sk. A Brno, sk. B Praha 1 | Ženy: sk. A Praha 1, sk. B Ostrava'
+        },
+        stolnyTenis: {
+            icon: 'fa-table-tennis',
+            name: 'Stolný tenis',
+            subtitle: 'Dvojčlenné tímy, skupinový systém',
+            categories: 'Muži / Ženy (oddelené skupiny)',
+            image: null,
+            details: [
+                { label: 'Miesto', value: 'Hala č. 13 (spoločenské miestnosti pri bazéne)' },
+                { label: 'Tím', value: 'Dvojčlenný' },
+                { label: 'Formát', value: 'Skupiny A, B – každý s každým' },
+                { label: 'Zápas', value: '2 dvojhry + prípadná štvorhra (do 2 víťazných)' },
+                { label: 'Finále', value: 'Do 3 víťazných zápasov' },
+                { label: 'Vedúci', value: 'Danica Lešková' },
+            ],
+            rules: [
+                'Každý tím tvorí dvojica hráčov.',
+                'Skupinová fáza: skupiny A a B, každý s každým.',
+                'Zápas: 2 dvojhry, prípadne štvorhra – do 2 víťazných zápasov.',
+                'Finálové zápasy: do 3 víťazných zápasov.',
+            ],
+            notes: ''
+        },
+        basketbal: {
+            icon: 'fa-basketball-ball',
+            name: 'Basketbal – hod na kôš',
+            subtitle: '5 stanovíšť na trojkovom oblúku, 1 minúta na každom',
+            categories: 'Mix (1 muž + 1 žena)',
+            image: null,
+            details: [
+                { label: 'Tím', value: '1 muž + 1 žena' },
+                { label: 'Miesto', value: 'Asfaltové ihrisko č. 9' },
+                { label: 'Stanovištia', value: '5 miest na trojkovom oblúku' },
+                { label: 'Čas na stanovišti', value: '1 minúta' },
+                { label: 'Bodovanie', value: 'Každý kôš = 1 bod' },
+                { label: 'Vedúci', value: 'Barbora Micajová' },
+            ],
+            rules: [
+                'Tím tvorí 1 muž a 1 žena.',
+                'Na každom z 5 stanovíšť na trojkovom oblúku má tím 1 minútu na hádzanie.',
+                'Každý úspešný kôš = 1 bod.',
+                'Poradie určuje celkový počet bodov (vyšší = lepšie umiestnenie).',
+                'Pri rovnosti bodov rozhoduje počet premenených striel zo stanovišťa „stred".',
+                'Ak je stále rovnosť: rozstrel – každý hráč tímu má 1 strelu zo stredu (spolu 2). Pri pretrvávajúcej remíze sa pokračuje po jednej strele na hráča.',
+            ],
+            notes: ''
+        },
+        miniGolf: {
+            icon: 'fa-golf-ball',
+            name: 'Minigolf',
+            subtitle: 'Tímová súťaž – striedavé údery, 18 jamiek',
+            categories: 'Mix (1 žena + 1 muž)',
+            image: null,
+            details: [
+                { label: 'Tím', value: '1 žena + 1 muž' },
+                { label: 'Miesto', value: 'Minigolf ihrisko č. 8' },
+                { label: 'Počet jamiek', value: '18' },
+                { label: 'Formát', value: 'Hráči striedajú údery' },
+                { label: 'Max. úderov na jamku', value: '6' },
+                { label: 'Víťaz', value: 'Najnižší celkový počet úderov' },
+                { label: 'Vedúci', value: 'Andrea Nerečová' },
+            ],
+            rules: [
+                'Tím tvorí 1 žena a 1 muž, hráči striedajú údery na každej jamke.',
+                'Na jednu jamku sú povolené maximálne 6 úderov.',
+                'Víťazí tím s najnižším celkovým počtom úderov.',
+                'Pri rovnosti rozhodujú jamky 13–18, potom 18. jamka, potom rozstrel.',
+            ],
+            notes: ''
+        },
+        bowling: {
+            icon: 'fa-bowling-ball',
+            name: 'Bowling',
+            subtitle: 'Klasický bowling turnaj',
+            categories: 'Mix (ženy & muži)',
+            image: null,
+            details: [],
+            rules: [],
+            notes: 'Pravidlá pre túto disciplínu ešte neboli dodané organizátorom.'
+        },
+        beh: {
+            icon: 'fa-running',
+            name: 'Beh',
+            subtitle: 'Beh v areáli strediska – cesta a trávnik',
+            categories: 'Muži / Ženy, neobmedzený počet bežcov',
+            image: 'img/sports/image2.png',
+            imageAlt: 'Mapa trasy behu',
+            details: [
+                { label: 'Trasa', value: 'Cesta a trávnik v areáli strediska' },
+                { label: 'Štart / Cieľ', value: 'Rovnaké miesto ako pri Aqua Cross' },
+                { label: 'Formát', value: 'Individuálna súťaž' },
+            ],
+            rules: [
+                'Beh prebieha v areáli strediska po ceste a trávniku.',
+                'Štart a cieľ sú na rovnakom mieste ako pri Aqua Cross.',
+                'Hodnotenie v kategóriách muži / ženy, bez obmedzenia vekových skupín.',
+            ],
+            notes: ''
+        },
+        aquaCross: {
+            icon: 'fa-water',
+            name: 'Aqua Cross',
+            subtitle: 'Štafetový beh s vodným prvkom – 5 úsekov',
+            categories: 'Mix (ženy & muži)',
+            image: 'img/sports/image1.png',
+            imageAlt: 'Mapa trasy Aqua Cross',
+            details: [
+                { label: 'Formát', value: 'Tímová štafeta – 5 úsekov' },
+                { label: 'Trasa', value: 'Štart pri jazere → svah → jazero → cieľ pri štarte' },
+                { label: 'Penalizácia', value: 'Vyliatie > 20 % vody = +10 sekúnd' },
+            ],
+            rules: [
+                '1. bežec: vybehne do svahu; na kopci odovzdá vedierko 2. bežcovi.',
+                '2. bežec: zbehne s vedierkom po vyznačenej trase lesom k jazeru, odovzdá ho 3. bežcovi.',
+                '3. bežec (plavec): prepláva / prebrodí jazero po vyznačenej trase tam a späť, odovzdá vedierko 4. bežcovi.',
+                '4. bežec: naberie vodu do vedierka pri brehu a naplní veľké vedro.',
+                '5. bežec: beží s plným vedrom do cieľa bez vyliatia.',
+                'Penalizácia: vyliatie viac ako 20 % = +10 sekúnd.',
+            ],
+            notes: ''
+        },
+        kviz: {
+            icon: 'fa-brain',
+            name: 'Poraď sa s koňom',
+            subtitle: 'Pohybová vedomostná štafeta',
+            categories: 'Mix (3 ženy + 3 muži)',
+            image: 'img/sports/image3.png',
+            imageAlt: 'Diagram disciplíny – Poraď sa s koňom',
+            details: [
+                { label: 'Miesto', value: 'Asfaltové ihrisko č. 9' },
+                { label: 'Tím', value: '3 ženy + 3 muži (6 hráčov)' },
+                { label: 'Hodnotenie', value: 'Počet správnych odpovedí + čas' },
+                { label: 'Vedúci', value: 'Kristína Drozdíková' },
+            ],
+            rules: [
+                'Súťažiaci stoja v Sektore A. Trojica vybehne do Sektora B – dvaja čakajú ako „koníky", jeden „jazdec" pokračuje do Sektora C.',
+                '„Jazdec" dostane od vedúceho otázku. Ak odpovie správne, vracia sa späť aj s koňmi a ide ďalšia trojica.',
+                'Ak odpovie nesprávne, môže sa „poradiť s koňom" – vráti sa k „koníkom" a má druhý pokus.',
+                'Správna odpoveď na druhý krát → vracia sa späť. Nesprávna → vracia sa bez bodu a ide ďalšia trojica.',
+                'Trojice si môžu meniť zloženie ako chcú – nemusia byť stále tí istí traja spolu.',
+            ],
+            notes: ''
+        },
+        plazovyTenis: {
+            icon: 'fa-baseball-ball',
+            name: 'Plážový tenis',
+            subtitle: 'Potenciálna disciplína',
+            categories: 'Mix (ženy & muži)',
+            image: null,
+            details: [],
+            rules: [],
+            notes: 'Pravidlá pre túto disciplínu ešte neboli dodané organizátorom. Disciplína je zaradená podmienečne – závisí od počasia a záujmu.'
+        },
+    };
+
+    function openSportModal(key) {
+        const sport = sportData[key];
+        if (!sport) return;
+
+        const imgHtml = sport.image
+            ? `<figure class="sport-modal-figure"><img src="${sport.image}" alt="${sport.imageAlt}" class="sport-modal-img"><figcaption>${sport.imageAlt}</figcaption></figure>`
+            : '';
+
+        const detailsHtml = sport.details.length
+            ? sport.details.map(d => `<tr><td class="sport-modal-detail-label">${d.label}</td><td>${d.value}</td></tr>`).join('')
+            : '';
+
+        const rulesHtml = sport.rules.length
+            ? sport.rules.map((r, i) => `<li>${r}</li>`).join('')
+            : '';
+
+        const notesHtml = sport.notes
+            ? `<div class="sport-modal-notes"><i class="fas fa-info-circle"></i> ${sport.notes}</div>`
+            : '';
+
+        document.getElementById('sportModalContent').innerHTML = `
+            <div class="sport-modal-header">
+                <div class="sport-modal-icon"><i class="fas ${sport.icon}"></i></div>
+                <div>
+                    <h2>${sport.name}</h2>
+                    <p class="sport-modal-subtitle">${sport.subtitle}</p>
+                    <span class="sport-modal-category"><i class="fas fa-users"></i> ${sport.categories}</span>
+                </div>
+            </div>
+            ${imgHtml}
+            ${detailsHtml ? `<h3 class="sport-modal-section-title"><i class="fas fa-info-circle"></i> Parametre disciplíny</h3>
+            <table class="sport-modal-table"><tbody>${detailsHtml}</tbody></table>` : ''}
+            ${rulesHtml ? `<h3 class="sport-modal-section-title"><i class="fas fa-list-ol"></i> Pravidlá & formát</h3>
+            <ol class="sport-modal-rules">${rulesHtml}</ol>` : ''}
+            ${notesHtml}
+        `;
+
+        document.getElementById('sportModal').classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeSportModal(e) {
+        if (e.target === document.getElementById('sportModal')) {
+            closeSportModalBtn();
+        }
+    }
+
+    function closeSportModalBtn() {
+        document.getElementById('sportModal').classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') closeSportModalBtn();
+    });
+    </script>
+
+    <style>
+    /* Sport cards – clickable */
+    .sport-card { cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; position: relative; }
+    .sport-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(37,99,235,0.15); }
+    .sport-card-more {
+        display: inline-block;
+        margin-top: 12px;
+        font-size: 0.82rem;
+        color: #2563eb;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+    }
+    .sport-card-more i { margin-right: 4px; }
+
+    /* Modal overlay */
+    .sport-modal-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(15,23,42,0.6);
+        z-index: 10000;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        backdrop-filter: blur(3px);
+    }
+    .sport-modal-overlay.active { display: flex; }
+
+    .sport-modal-box {
+        background: #fff;
+        border-radius: 14px;
+        width: 100%;
+        max-width: 680px;
+        max-height: 88vh;
+        overflow-y: auto;
+        padding: 36px 36px 30px;
+        position: relative;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        animation: modalIn 0.2s ease;
+    }
+    @keyframes modalIn {
+        from { opacity: 0; transform: scale(0.95) translateY(12px); }
+        to   { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    .sport-modal-close {
+        position: absolute;
+        top: 16px; right: 18px;
+        background: #f1f5f9;
+        border: none;
+        font-size: 1.5rem;
+        line-height: 1;
+        width: 36px; height: 36px;
+        border-radius: 50%;
+        cursor: pointer;
+        color: #475569;
+        display: flex; align-items: center; justify-content: center;
+        transition: background 0.15s;
+    }
+    .sport-modal-close:hover { background: #e2e8f0; color: #1e293b; }
+
+    .sport-modal-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 18px;
+        margin-bottom: 22px;
+    }
+    .sport-modal-icon {
+        width: 56px; height: 56px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #2563eb, #1d4ed8);
+        color: #fff;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 1.6rem;
+        flex-shrink: 0;
+    }
+    .sport-modal-header h2 { margin: 0 0 4px; font-size: 1.5rem; color: #0f172a; }
+    .sport-modal-subtitle { margin: 0 0 8px; color: #64748b; font-size: 0.95rem; }
+    .sport-modal-category {
+        display: inline-block;
+        background: #eff6ff;
+        color: #1d4ed8;
+        border-radius: 20px;
+        padding: 3px 10px;
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+
+    .sport-modal-figure {
+        margin: 0 0 22px;
+        background: #f1f5f9;
+        border: 1px solid #e2e8f0;
+        border-radius: 10px;
+        padding: 12px 12px 8px;
+        text-align: center;
+    }
+    .sport-modal-img {
+        width: 100%;
+        max-height: 300px;
+        object-fit: contain;
+        border-radius: 6px;
+        display: block;
+    }
+    .sport-modal-figure figcaption {
+        font-size: 0.78rem;
+        color: #94a3b8;
+        margin-top: 6px;
+        font-style: italic;
+    }
+
+    .sport-modal-section-title {
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: #1e293b;
+        margin: 20px 0 10px;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+    .sport-modal-section-title i { color: #2563eb; }
+
+    .sport-modal-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.92rem;
+        margin-bottom: 4px;
+    }
+    .sport-modal-table tr:nth-child(odd) { background: #f8fafc; }
+    .sport-modal-table td { padding: 9px 12px; border-radius: 4px; }
+    .sport-modal-detail-label { font-weight: 600; color: #475569; width: 48%; }
+
+    .sport-modal-rules {
+        padding-left: 20px;
+        color: #334155;
+        font-size: 0.92rem;
+        line-height: 1.7;
+        margin: 0;
+    }
+    .sport-modal-rules li { margin-bottom: 5px; }
+
+    .sport-modal-notes {
+        margin-top: 18px;
+        background: #fef3c7;
+        border-left: 4px solid #f59e0b;
+        padding: 10px 14px;
+        border-radius: 6px;
+        font-size: 0.88rem;
+        color: #92400e;
+    }
+    .sport-modal-notes i { margin-right: 6px; }
+
+    @media (max-width: 600px) {
+        .sport-modal-box { padding: 24px 18px 20px; }
+        .sport-modal-header { flex-direction: column; gap: 10px; }
+    }
+    </style>
 </body>
 </html>

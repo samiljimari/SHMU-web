@@ -305,13 +305,12 @@
                         <p><strong>Termín:</strong> [Vložiť dátum]</p>
                         <p><strong>Kontakt:</strong> akcie@shmu.sk</p>
                         
-                        <!-- DEBUG ONLY - REMOVE BEFORE PRODUCTION -->
+                        <!-- Form autofiller (test helper) -->
                         <div style="background: #fef3c7; border: 2px solid #f59e0b; padding: 1rem; margin: 1rem 0; border-radius: 8px;">
                             <button type="button" id="debugFillForm" style="background: #f59e0b; color: white; border: none; padding: 0.5rem 1rem; border-radius: 5px; cursor: pointer; font-weight: 600;">
                                 Fill Form with Random Data
                             </button>
                         </div>
-                        <!-- END DEBUG -->
                         
                         <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Registračný formulár</h3>
                         <form class="registration-form" id="registrationForm">
@@ -395,48 +394,27 @@
     <script>
         // Collapsible schedule functionality
         window.addEventListener('load', function() {
-            console.log('Initializing collapsible headers...');
-            
             const headers = document.querySelectorAll('.schedule-table .collapsible-header');
-            console.log('Found headers:', headers.length);
             
-            if (headers.length === 0) {
-                console.warn('No collapsible headers found!');
-                return;
-            }
+            if (headers.length === 0) return;
             
             // Open first day by default
             headers[0].classList.add('active');
             const firstContent = headers[0].nextElementSibling;
             if (firstContent && firstContent.classList.contains('collapsible-content')) {
                 firstContent.classList.add('active');
-                console.log('First day opened by default');
             }
             
             // Add click handlers to each header
-            headers.forEach(function(header, index) {
-                console.log('Adding listener to header', index + 1);
-                
-                header.onclick = function(e) {
-                    console.log('Header clicked:', index + 1);
-                    
-                    // Toggle active class on header
+            headers.forEach(function(header) {
+                header.onclick = function() {
                     this.classList.toggle('active');
-                    
-                    // Get the next element (content)
                     const content = this.nextElementSibling;
-                    
-                    // Toggle content if it exists and has the right class
                     if (content && content.classList.contains('collapsible-content')) {
                         content.classList.toggle('active');
-                        console.log('Toggled content for header', index + 1, '- Active:', content.classList.contains('active'));
-                    } else {
-                        console.warn('Content not found for header', index + 1);
                     }
                 };
             });
-            
-            console.log('Collapsible headers initialized successfully');
         });
 
         // Generate dynamic team member fields
@@ -495,7 +473,7 @@
             }
         });
         
-        // DEBUG ONLY - REMOVE BEFORE PRODUCTION
+        // Form autofiller (test helper)
         document.getElementById('debugFillForm').addEventListener('click', function() {
             const cities = ['Bratislava', 'Praha 1', 'Praha 2', 'Ostrava 1', 'Ostrava 2', 'Brno', 'Košice', 'Žilina'];
             const firstNames = ['Ján', 'Peter', 'Mária', 'Anna', 'Milan', 'Eva', 'Tomáš', 'Katarína', 'Martin', 'Zuzana', 'Michal', 'Lucia', 'Jakub', 'Petra', 'Marek'];
@@ -565,7 +543,6 @@
                 alert('✓ Formulár bol vyplnený testovacími údajmi!');
             }, 100);
         });
-        // END DEBUG
         
         // Handle registration form submission
         document.getElementById('registrationForm').addEventListener('submit', function(e) {
